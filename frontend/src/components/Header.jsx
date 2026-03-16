@@ -1,0 +1,112 @@
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Menu, X, Moon, Sun } from 'lucide-react';
+import './Header.css';
+
+export default function Header({ darkMode, setDarkMode }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { label: 'Home', href: '#hero' },
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Trainers', href: '#trainers' },
+    { label: 'Membership', href: '#membership' },
+    { label: 'Contact', href: '#contact' }
+  ];
+
+  const handleNavClick = (href) => {
+    setIsMenuOpen(false);
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <motion.header
+      className={`header ${isScrolled ? 'scrolled' : ''}`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="header-container">
+        <div className="logo">
+          <h1>FitPulse</h1>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="nav-desktop">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(link.href);
+              }}
+              className="nav-link"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Controls */}
+        <div className="header-controls">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="theme-toggle"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
+          >
+            {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <motion.nav
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          className="nav-mobile"
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(link.href);
+              }}
+              className="nav-link-mobile"
+            >
+              {link.label}
+            </a>
+          ))}
+        </motion.nav>
+      )}
+    </motion.header>
+  );
+}

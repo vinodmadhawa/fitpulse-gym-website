@@ -1,0 +1,50 @@
+example-requests.rest
+PUT /contact/507f1f77bcf86cd799439011
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "message": "Updated message",
+  "isRead": true
+}
+
+### Create Contact Message
+POST http://localhost:5000/api/contact
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "email": "jane@example.com",
+  "message": "I'm interested in joining the gym and learning more about memberships"
+}
+
+### Create Contact Message - Another Example
+POST http://localhost:5000/api/contact
+Content-Type: application/json
+
+{
+  "name": "Michael Johnson",
+  "email": "michael@example.com",
+  "message": "Can I get information about personal training options?"
+}
+
+### Get All Contact Messages
+GET http://localhost:5000/api/contact
+
+### Get Contact Message by ID
+GET http://localhost:5000/api/contact/507f1f77bcf86cd799439011
+
+### Update Contact Message
+PUT http://localhost:5000/api/contact/507f1f77bcf86cd799439011
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "email": "jane@example.com",
+  "message": "Updated: I'm very interested!",
+  "isRead": true
+}
+
+### Delete Contact Message
+DELETE http://localhost:5000/api/contact/507f1f77bcf86cd799439011
