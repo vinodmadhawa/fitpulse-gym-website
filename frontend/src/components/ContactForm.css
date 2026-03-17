@@ -38,7 +38,7 @@
 }
 
 .contact .section-header p {
-  color: #ff6b35;
+  color: #D4A017;
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -84,8 +84,8 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #ff6b35;
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  border-color: #D4A017;
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1);
 }
 
 .contact-form input.error,
@@ -134,8 +134,8 @@
 
 .btn-submit {
   padding: 14px 32px;
-  background-color: #ff6b35;
-  color: white;
+  background-color: #D4A017;
+  color: #2B2520;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
@@ -150,9 +150,9 @@
 }
 
 .btn-submit:hover:not(:disabled) {
-  background-color: #e55a2b;
+  background-color: #C49015;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 10px 25px rgba(212, 160, 23, 0.3);
 }
 
 .btn-submit:disabled {

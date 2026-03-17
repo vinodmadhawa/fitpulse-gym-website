@@ -1,6 +1,6 @@
 .membership {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+  background: linear-gradient(135deg, #2B2520 0%, #3D3930 100%);
   color: white;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .membership .section-header p {
-  color: #ff6b35;
+  color: #D4A017;
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -42,10 +42,10 @@
 }
 
 .membership-card {
-  background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+  background: linear-gradient(135deg, #3D3930 0%, #4A4540 100%);
   padding: 40px 30px;
   border-radius: 15px;
-  border: 1px solid rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(212, 160, 23, 0.1);
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
@@ -58,18 +58,19 @@
 }
 
 .membership-card:hover {
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  border-color: rgba(212, 160, 23, 0.3);
+  box-shadow: 0 20px 40px rgba(212, 160, 23, 0.2);
 }
 
 .membership-card.featured {
-  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  background: linear-gradient(135deg, #D4A017 0%, #C49015 100%);
   transform: scale(1.05);
   border: none;
+  color: #2B2520;
 }
 
 .light-mode .membership-card.featured {
-  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  background: linear-gradient(135deg, #D4A017 0%, #C49015 100%);
   color: white;
   transform: scale(1.05);
 }
@@ -78,8 +79,8 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #ff6b35;
-  color: white;
+  background-color: #D4A017;
+  color: #2B2520;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -88,7 +89,7 @@
 
 .membership-card.featured .badge {
   background-color: white;
-  color: #ff6b35;
+  color: #D4A017;
 }
 
 .membership-card h3 {
@@ -184,30 +185,30 @@
 }
 
 .btn-primary {
-  background-color: #ff6b35;
-  color: white;
+  background-color: #D4A017;
+  color: #2B2520;
 }
 
 .btn-primary:hover {
-  background-color: #e55a2b;
+  background-color: #C49015;
   transform: translateY(-2px);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #ff6b35;
-  border: 2px solid #ff6b35;
+  color: #D4A017;
+  border: 2px solid #D4A017;
 }
 
 .btn-secondary:hover {
-  background-color: #ff6b35;
-  color: white;
+  background-color: #D4A017;
+  color: #2B2520;
   transform: translateY(-2px);
 }
 
 .membership-card.featured .btn-primary {
   background-color: white;
-  color: #ff6b35;
+  color: #D4A017;
 }
 
 .membership-card.featured .btn-primary:hover {

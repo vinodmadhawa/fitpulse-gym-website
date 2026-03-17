@@ -97,7 +97,7 @@ export default function Membership() {
               <ul className="features">
                 {plan.features.map((feature, index) => (
                   <li key={index}>
-                    <Check size={20} color="#ff6b35" />
+                    <Check size={20} color="#D4A017" />
                     <span>{feature}</span>
                   </li>
                 ))}

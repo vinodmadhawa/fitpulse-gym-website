@@ -159,8 +159,8 @@ export default function ComponentName() {
    ```
 
 3. **Color Variables:**
-   - Primary: `#ff6b35` (Orange)
-   - Dark: `#1f1f1f` (Text)
+   - Primary: `#D4A017` (Gold)
+   - Dark: `#2B2520` (Dark Brown)
    - Light: `#ffffff` (Background)
    - Gray: `#aaa` (Secondary text)
 
@@ -381,7 +381,7 @@ curl -X DELETE http://localhost:5000/api/endpoint/id
 }
 
 .component.active {
-  color: #ff6b35;
+  color: #D4A017;
 }
 
 /* 3. Child elements */

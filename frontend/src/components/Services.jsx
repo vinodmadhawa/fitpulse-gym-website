@@ -9,28 +9,28 @@ export default function Services() {
       title: 'Personal Training',
       description: 'Get customized workout plans tailored to your fitness goals with our certified trainers.',
       icon: Dumbbell,
-      color: '#ff6b35'
+      color: '#D4A017'
     },
     {
       id: 2,
       title: 'Strength Training',
       description: 'Build muscle and increase your strength with our advanced equipment and expert guidance.',
       icon: Zap,
-      color: '#ff6b35'
+      color: '#D4A017'
     },
     {
       id: 3,
       title: 'Cardio Programs',
       description: 'Improve your cardiovascular health with various cardio workouts and training programs.',
       icon: Heart,
-      color: '#ff6b35'
+      color: '#D4A017'
     },
     {
       id: 4,
       title: 'Group Classes',
       description: 'Join our energetic group fitness classes and workout with a supportive community.',
       icon: Users,
-      color: '#ff6b35'
+      color: '#D4A017'
     }
   ];
 

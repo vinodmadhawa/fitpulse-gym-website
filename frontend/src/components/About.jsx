@@ -50,7 +50,7 @@ export default function About() {
                   viewport={{ once: true }}
                   className="feature"
                 >
-                  <CheckCircle color="#ff6b35" size={24} />
+                  <CheckCircle color="#D4A017" size={24} />
                   <div>
                     <div className="feature-number">{feature.icon}</div>
                     <div className="feature-text">{feature.text}</div>

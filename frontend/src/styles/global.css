@@ -40,21 +40,21 @@ html, body, #root {
 }
 
 .light-mode ::-webkit-scrollbar-thumb {
-  background: #ff6b35;
+  background: #D4A017;
   border-radius: 5px;
 }
 
 .dark-mode ::-webkit-scrollbar-thumb {
-  background: #ff6b35;
+  background: #D4A017;
   border-radius: 5px;
 }
 
 .light-mode ::-webkit-scrollbar-thumb:hover {
-  background: #e55a2b;
+  background: #C49015;
 }
 
 .dark-mode ::-webkit-scrollbar-thumb:hover {
-  background: #e55a2b;
+  background: #C49015;
 }
 
 /* Smooth scroll behavior */
