@@ -47,7 +47,7 @@ export default function Hero() {
         >
           <div className="image-placeholder">
             <img 
-              src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=500&h=600&fit=crop" 
+              src="https://media.istockphoto.com/id/1277242852/photo/holding-weight-and-sitting.jpg?s=612x612&w=0&k=20&c=3sy-VVhUYjABpNEMI2aoruXQuOVb__-AUR6BzOHoSJg=" 
               alt="Fit woman exercising"
               loading="lazy"
             />

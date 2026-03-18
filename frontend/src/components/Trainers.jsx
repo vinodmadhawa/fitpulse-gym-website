@@ -7,19 +7,19 @@ export default function Trainers() {
       id: 1,
       name: 'Alex',
       specialty: 'Strength Coach',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=350&fit=crop'
+      image: 'https://pbs.twimg.com/profile_images/1975230895196913665/xedik9oN.jpg'
     },
     {
       id: 2,
       name: 'Mia',
       specialty: 'Yoga Instructor',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=350&fit=crop'
+      image: 'https://demo.yolotheme.com/jhana/wp-content/uploads/2020/10/trainer-12.jpg'
     },
     {
       id: 3,
       name: 'Jake',
       specialty: 'Cardio Specialist',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=350&fit=crop'
+      image: 'https://cdn.hexahealth.com/Image/webp/480x480/1724907819477-716516224.webp'
     }
   ];
 
