@@ -1,27 +1,10 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { trainersData } from '../data/trainersData';
 import './Trainers.css';
 
 export default function Trainers() {
-  const trainers = [
-    {
-      id: 1,
-      name: 'Alex',
-      specialty: 'Strength Coach',
-      image: 'https://pbs.twimg.com/profile_images/1975230895196913665/xedik9oN.jpg'
-    },
-    {
-      id: 2,
-      name: 'Mia',
-      specialty: 'Yoga Instructor',
-      image: 'https://demo.yolotheme.com/jhana/wp-content/uploads/2020/10/trainer-12.jpg'
-    },
-    {
-      id: 3,
-      name: 'Jake',
-      specialty: 'Cardio Specialist',
-      image: 'https://cdn.hexahealth.com/Image/webp/480x480/1724907819477-716516224.webp'
-    }
-  ];
+  const navigate = useNavigate();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,6 +23,10 @@ export default function Trainers() {
       scale: 1,
       transition: { duration: 0.5 }
     }
+  };
+
+  const handleTrainerClick = (trainerId) => {
+    navigate(`/trainer/${trainerId}`);
   };
 
   return (
@@ -63,12 +50,14 @@ export default function Trainers() {
           viewport={{ once: true }}
           className="trainers-grid"
         >
-          {trainers.map((trainer) => (
+          {trainersData.map((trainer) => (
             <motion.div
               key={trainer.id}
               variants={cardVariants}
               className="trainer-card"
               whileHover={{ y: -10 }}
+              onClick={() => handleTrainerClick(trainer.id)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="trainer-image">
                 <img 
@@ -77,7 +66,7 @@ export default function Trainers() {
                   loading="lazy"
                 />
                 <div className="trainer-overlay">
-                  <p>Expert Trainer</p>
+                  <p>View Profile</p>
                 </div>
               </div>
               <div className="trainer-info">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,7 +8,22 @@ import Trainers from './components/Trainers';
 import Membership from './components/Membership';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import TrainerDetail from './components/TrainerDetail';
 import './styles/global.css';
+
+function HomePage({ darkMode, setDarkMode }) {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Services />
+      <Trainers />
+      <Membership />
+      <ContactForm />
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -33,16 +49,15 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Hero />
-      <About />
-      <Services />
-      <Trainers />
-      <Membership />
-      <ContactForm />
-      <Footer />
-    </div>
+    <Router>
+      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Routes>
+          <Route path="/" element={<HomePage darkMode={darkMode} setDarkMode={setDarkMode} />} />
+          <Route path="/trainer/:id" element={<TrainerDetail darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

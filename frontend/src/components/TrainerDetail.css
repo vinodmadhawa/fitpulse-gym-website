@@ -1,0 +1,424 @@
+.trainer-detail {
+  min-height: 100vh;
+  padding: 20px;
+  background: white;
+  transition: background 0.3s ease;
+}
+
+.dark-mode .trainer-detail {
+  background: #1f1f1f;
+  color: #f5f5f5;
+}
+
+.light-mode .trainer-detail {
+  background: #f9f9f9;
+  color: #333;
+}
+
+.trainer-detail-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 2px solid #D4A017;
+  color: #D4A017;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  background: #D4A017;
+  color: #2B2520;
+  transform: translateX(-5px);
+}
+
+.trainer-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left side - Image */
+.trainer-detail-image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trainer-detail-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.trainer-detail-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #D4A017 0%, #C49015 100%);
+  color: #2B2520;
+  padding: 15px 25px;
+  border-radius: 50px;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+}
+
+/* Right side - Content */
+.trainer-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.trainer-detail-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trainer-detail-header-info h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #2B2520;
+}
+
+.dark-mode .trainer-detail-header-info h1 {
+  color: white;
+}
+
+.specialty-title {
+  font-size: 1.3rem;
+  color: #D4A017;
+  font-weight: 600;
+}
+
+.experience {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.dark-mode .experience {
+  color: #aaa;
+}
+
+/* Contact info */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+.contact-item svg {
+  color: #D4A017;
+  min-width: 20px;
+}
+
+.contact-item a {
+  color: #2B2520;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .contact-item a {
+  color: #D4A017;
+}
+
+.contact-item a:hover {
+  color: #D4A017;
+}
+
+/* Sections */
+.about-section,
+.certifications-section,
+.specialties-section,
+.approach-section,
+.achievements-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trainer-detail-content h2 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: #2B2520;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dark-mode .trainer-detail-content h2 {
+  color: white;
+}
+
+.trainer-detail-content h2 svg {
+  color: #D4A017;
+}
+
+.trainer-detail-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  margin: 0;
+}
+
+.dark-mode .trainer-detail-content p {
+  color: #aaa;
+}
+
+/* Certifications */
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.certification-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.1) 0%, rgba(212, 160, 23, 0.05) 100%);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  color: #D4A017;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.certification-badge:hover {
+  background: rgba(212, 160, 23, 0.2);
+  border-color: #D4A017;
+  transform: translateY(-2px);
+}
+
+/* Specialties grid */
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.specialty-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: rgba(212, 160, 23, 0.05);
+  border-left: 3px solid #D4A017;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .specialty-item {
+  background: rgba(212, 160, 23, 0.1);
+}
+
+.specialty-item:hover {
+  background: rgba(212, 160, 23, 0.15);
+  transform: translateX(5px);
+}
+
+.specialty-dot {
+  color: #D4A017;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Achievements */
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievements-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: rgba(212, 160, 23, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .achievements-list li {
+  background: rgba(212, 160, 23, 0.1);
+}
+
+.achievements-list li:hover {
+  background: rgba(212, 160, 23, 0.15);
+  transform: translateX(5px);
+}
+
+.achievement-icon {
+  color: #D4A017;
+  font-weight: 700;
+  font-size: 1.2rem;
+  min-width: 20px;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #D4A017 0%, #C49015 100%);
+  color: #2B2520;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #D4A017;
+  border: 2px solid #D4A017;
+}
+
+.btn-secondary:hover {
+  background: #D4A017;
+  color: #2B2520;
+  transform: translateY(-2px);
+}
+
+.trainer-not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.trainer-not-found h2 {
+  font-size: 2rem;
+}
+
+.trainer-not-found button {
+  background: #D4A017;
+  color: #2B2520;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.trainer-not-found button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .trainer-detail-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .trainer-detail-image img {
+    height: 400px;
+  }
+
+  .trainer-detail-header-info h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .trainer-detail {
+    padding: 15px;
+  }
+
+  .trainer-detail-image img {
+    height: 300px;
+  }
+
+  .trainer-detail-header-info h1 {
+    font-size: 2rem;
+  }
+
+  .specialties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .trainer-detail-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .trainer-detail-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainer-detail-header-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .trainer-detail-image img {
+    height: 250px;
+    border-radius: 10px;
+  }
+
+  .certification-badge {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .trainer-detail-content h2 {
+    font-size: 1.2rem;
+  }
+}
