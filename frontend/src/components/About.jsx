@@ -19,11 +19,25 @@ export default function About() {
             viewport={{ once: true }}
             className="about-image"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=400&fit=crop" 
-              alt="Gym interior"
-              loading="lazy"
-            />
+            <div className="about-logo-section">
+              <img 
+                src="/assets/logo.png" 
+                alt="FitPulse Sports Center" 
+                className="about-logo-img"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  const el = document.querySelector('.about-logo-fallback');
+                  if (el) el.style.display = 'flex';
+                }}
+              />
+              <div className="about-logo-fallback" style={{ display: 'none' }}>
+                <img 
+                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=400&fit=crop" 
+                  alt="Gym interior"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </motion.div>
 
           <motion.div

@@ -30,16 +30,54 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #D4A017 0%, #C49015 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+/* Old logo styles - keeping for reference */
 .logo h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: #D4A017;
   margin: 0;
+  display: none;
 }
 
 .nav-desktop {

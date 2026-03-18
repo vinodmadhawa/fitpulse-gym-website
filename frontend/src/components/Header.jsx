@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import './Header.css';
 
 export default function Header({ darkMode, setDarkMode }) {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -39,8 +41,27 @@ export default function Header({ darkMode, setDarkMode }) {
       transition={{ duration: 0.5 }}
     >
       <div className="header-container">
-        <div className="logo">
-          <h1>FitPulse</h1>
+<div className="header-brand">
+        <motion.div
+          initial={{ scale: 0.8 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="logo-container"
+          onClick={() => {
+            setIsMenuOpen(false);
+            navigate('/');
+          }}
+        >
+          <img 
+            src="/assets/logo.png" 
+            alt="FitPulse Sports Center" 
+            className="logo"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+          <span className="brand-name">FitPulse</span>
+        </motion.div>
         </div>
 
         {/* Desktop Navigation */}

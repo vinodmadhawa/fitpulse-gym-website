@@ -52,6 +52,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border: 1px solid rgba(212, 160, 23, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .light-mode .service-card {
@@ -109,6 +111,34 @@
 
 .light-mode .service-card p {
   color: #666;
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.95), rgba(196, 144, 21, 0.95));
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover .service-overlay {
+  opacity: 1;
+}
+
+.service-overlay span {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Responsive Design */

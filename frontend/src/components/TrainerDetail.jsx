@@ -173,7 +173,9 @@ export default function TrainerDetail({ darkMode, setDarkMode }) {
               transition={{ delay: 0.9 }}
               className="action-buttons"
             >
-              <button className="btn btn-primary">Book Session with {trainer.name.split(' ')[0]}</button>
+              <button className="btn btn-primary" onClick={() => navigate('/booking')}>
+                Book Session with {trainer.name.split(' ')[0]}
+              </button>
               <button className="btn btn-secondary" onClick={() => navigate('/#contact')}>
                 Send Message
               </button>

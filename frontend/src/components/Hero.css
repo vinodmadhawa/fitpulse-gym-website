@@ -40,6 +40,25 @@
   margin-bottom: 20px;
 }
 
+.hero-logo-badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero-logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(212, 160, 23, 0.3));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
 .hero-text h1 span {
   color: #D4A017;
 }

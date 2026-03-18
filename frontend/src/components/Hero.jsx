@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './Hero.css';
 
 export default function Hero() {
+  const navigate = useNavigate();
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
@@ -17,6 +19,14 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="hero-text"
         >
+          <div className="hero-logo-badge">
+            <img 
+              src="/assets/logo.png" 
+              alt="FitPulse Power" 
+              className="hero-logo-img"
+              onError={(e) => e.target.style.display = 'none'}
+            />
+          </div>
           <h1>Reach Your Fitness Goals</h1>
           <p>Get in the best shape of your life with our expert trainers and a motivating environment to help you succeed.</p>
           
@@ -33,6 +43,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn btn-secondary"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Learn More
             </motion.button>

@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import './Membership.css';
 
 export default function Membership() {
+  const navigate = useNavigate();
+
+
   const plans = [
     {
       id: 1,
@@ -107,6 +111,7 @@ export default function Membership() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`btn ${plan.badge ? 'btn-primary' : 'btn-secondary'}`}
+                onClick={() => navigate(`/membership/${plan.name.toLowerCase()}`)}
               >
                 Get Started
               </motion.button>

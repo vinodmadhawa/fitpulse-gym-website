@@ -22,7 +22,19 @@ export default function Footer() {
             viewport={{ once: true }}
             className="footer-section"
           >
-            <h3>FitPulse</h3>
+            <div className="footer-logo-section">
+              <img 
+                src="/assets/logo.png" 
+                alt="FitPulse Sports Center" 
+                className="footer-logo"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  const el = document.querySelector('.footer-brand-text');
+                  if (el) el.style.display = 'block';
+                }}
+              />
+              <h3 className="footer-brand-text">FitPulse</h3>
+            </div>
             <p>Your ultimate gym experience with expert trainers and modern facilities.</p>
             <div className="social-links">
               {socialLinks.map((social) => {

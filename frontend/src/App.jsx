@@ -9,6 +9,10 @@ import Membership from './components/Membership';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import TrainerDetail from './components/TrainerDetail';
+import ServiceDetail from './components/ServiceDetail';
+import Booking from './components/Booking';
+import FAQ from './components/FAQ';
+import MembershipDetail from './components/MembershipDetail';
 import './styles/global.css';
 
 function HomePage({ darkMode, setDarkMode }) {
@@ -55,6 +59,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage darkMode={darkMode} setDarkMode={setDarkMode} />} />
           <Route path="/trainer/:id" element={<TrainerDetail darkMode={darkMode} setDarkMode={setDarkMode} />} />
+          <Route path="/service/:id" element={<ServiceDetail darkMode={darkMode} setDarkMode={setDarkMode} />} />
+          <Route path="/booking" element={<Booking darkMode={darkMode} setDarkMode={setDarkMode} />} />
+          <Route path="/faq" element={<FAQ darkMode={darkMode} setDarkMode={setDarkMode} />} />
+          <Route path="/membership/:planName" element={<MembershipDetail darkMode={darkMode} setDarkMode={setDarkMode} />} />
         </Routes>
       </div>
     </Router>

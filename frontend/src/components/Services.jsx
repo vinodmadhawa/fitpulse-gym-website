@@ -1,38 +1,14 @@
 import { motion } from 'framer-motion';
-import { Dumbbell, Zap, Heart, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { servicesData } from '../data/servicesData';
 import './Services.css';
 
 export default function Services() {
-  const services = [
-    {
-      id: 1,
-      title: 'Personal Training',
-      description: 'Get customized workout plans tailored to your fitness goals with our certified trainers.',
-      icon: Dumbbell,
-      color: '#D4A017'
-    },
-    {
-      id: 2,
-      title: 'Strength Training',
-      description: 'Build muscle and increase your strength with our advanced equipment and expert guidance.',
-      icon: Zap,
-      color: '#D4A017'
-    },
-    {
-      id: 3,
-      title: 'Cardio Programs',
-      description: 'Improve your cardiovascular health with various cardio workouts and training programs.',
-      icon: Heart,
-      color: '#D4A017'
-    },
-    {
-      id: 4,
-      title: 'Group Classes',
-      description: 'Join our energetic group fitness classes and workout with a supportive community.',
-      icon: Users,
-      color: '#D4A017'
-    }
-  ];
+  const navigate = useNavigate();
+
+  const handleServiceClick = (serviceId) => {
+    navigate(`/service/${serviceId}`);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,7 +51,7 @@ export default function Services() {
           viewport={{ once: true }}
           className="services-grid"
         >
-          {services.map((service) => {
+          {servicesData.map((service) => {
             const IconComponent = service.icon;
             return (
               <motion.div
@@ -83,12 +59,17 @@ export default function Services() {
                 variants={cardVariants}
                 className="service-card"
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                onClick={() => handleServiceClick(service.id)}
+                style={{ cursor: 'pointer' }}
               >
                 <div className="service-icon">
                   <IconComponent size={40} color={service.color} />
                 </div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+                <div className="service-overlay">
+                  <span>View Details</span>
+                </div>
               </motion.div>
             );
           })}

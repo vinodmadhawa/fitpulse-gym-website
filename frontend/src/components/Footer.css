@@ -28,6 +28,33 @@
 
 .footer-section h3 {
   font-size: 1.5rem;
+  color: #D4A017;
+  margin-bottom: 15px;
+}
+
+.footer-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand-text {
+  margin: 0 !important;
+  font-size: 20px;
+  color: #D4A017;
+  font-weight: 800;
+}
+
+.dark-mode .footer-brand-text {
+  color: #D4A017;
+}
   margin-bottom: 15px;
   color: #D4A017;
 }
