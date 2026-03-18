@@ -19,30 +19,31 @@ Before you start, make sure you have:
 
 - **Node.js** 16+ (Get from [nodejs.org](https://nodejs.org))
 - **.NET 8 SDK** (Get from [dotnet.microsoft.com](https://dotnet.microsoft.com))
-- **MongoDB** locally running OR [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account
 - **Git** installed
+
+> **Note:** MongoDB Atlas is already configured! All API calls are connected to the cloud database.
 
 ## Super Fast Setup (5 minutes)
 
-### 1. Start Frontend (Terminal 1)
+### ⚡ Quick 3-Terminal Start
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-**Open:** http://localhost:5173 in your browser
-
-### 2. Start Backend (Terminal 2)
-
+**Terminal 1 - Backend:**
 ```bash
 cd backend
 dotnet restore
 dotnet run
 ```
+Opens: http://localhost:5000/swagger
 
-**Swagger API Docs:** http://localhost:5000/swagger
+**Terminal 2 - Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Opens: http://localhost:5173
+
+That's it! Website is live ✅
 
 ## That's It! 🎉
 
@@ -69,6 +70,17 @@ Your website is now running! Here's what you can do:
 - **Membership:** 3 pricing tiers (Basic, Standard, Premium)
 - **Contact:** Contact form
 - **Footer:** Links and social media
+
+## Database Connection
+
+✅ **MongoDB Atlas is already configured!**
+
+- **Database:** fitpulse
+- **Connection:** Cloud-based (mongodb+srv://...)
+- **All API calls** automatically connect to the database
+- View data at: [MongoDB Atlas Console](https://cloud.mongodb.com)
+
+> For detailed MongoDB setup & troubleshooting, see [MONGODB-SETUP.md](./MONGODB-SETUP.md)
 
 ## Testing the API
 

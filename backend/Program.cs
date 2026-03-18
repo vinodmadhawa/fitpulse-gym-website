@@ -8,9 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<MongoDbContext>(provider =>
 {
     var configuration = provider.GetRequiredService<IConfiguration>();
-    var connectionString = configuration.GetConnectionString("MongoDB") 
+    
+    // Try to get MongoDB connection from appsettings
+    var connectionString = configuration.GetSection("MongoDb")["ConnectionString"] 
+        ?? configuration.GetConnectionString("MongoDB")
         ?? "mongodb://localhost:27017";
-    var databaseName = configuration.GetValue<string>("DatabaseName") ?? "GymDb";
+    
+    var databaseName = configuration.GetSection("MongoDb")["DatabaseName"]
+        ?? configuration.GetValue<string>("DatabaseName")
+        ?? "fitpulse";
+    
     return new MongoDbContext(connectionString, databaseName);
 });
 
