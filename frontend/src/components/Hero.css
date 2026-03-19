@@ -31,6 +31,15 @@
   width: 100%;
   position: relative;
   z-index: 2;
+  visibility: visible;
+  opacity: 1;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
 }
 
 .hero-text h1 {
@@ -38,6 +47,10 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
+  color: #ffffff;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hero-logo-badge {
@@ -53,6 +66,8 @@
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hero-logo-img {
@@ -61,6 +76,8 @@
   object-fit: contain;
   filter: drop-shadow(0 8px 16px rgba(212, 160, 23, 0.4));
   transition: transform 0.3s ease;
+  visibility: visible;
+  opacity: 1;
 }
 
 @keyframes float {
@@ -74,9 +91,12 @@
 
 .hero-text p {
   font-size: 1.1rem;
-  color: #ccc;
+  color: #cccccc;
   margin-bottom: 30px;
   line-height: 1.8;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hero-buttons {
