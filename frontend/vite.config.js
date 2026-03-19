@@ -4,6 +4,18 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/fitpulse-gym-website/' : '/',
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // Ensure proper asset paths
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+      }
+    }
+  },
   server: {
     proxy: {
       '/api': {
