@@ -35,9 +35,22 @@ export default function MembershipCheckout() {
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
+    let finalValue = type === 'checkbox' ? checked : value;
+    
+    // Auto-format expiry date (MM/YY)
+    if (name === 'expiryDate') {
+      // Remove non-digits
+      let digits = value.replace(/\D/g, '');
+      // Add / after 2 digits if length is more than 2
+      if (digits.length >= 2) {
+        digits = digits.slice(0, 2) + '/' + digits.slice(2, 4);
+      }
+      finalValue = digits;
+    }
+    
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: finalValue
     }));
     // Clear error for this field when user starts typing
     if (errors[name]) {
@@ -61,9 +74,29 @@ export default function MembershipCheckout() {
     if (!formData.zipCode.trim()) newErrors.zipCode = 'Zip code is required';
     if (!formData.cardName.trim()) newErrors.cardName = 'Cardholder name is required';
     if (!formData.cardNumber.replace(/\s/g, '').match(/^\d{13,19}$/)) newErrors.cardNumber = 'Valid card number is required';
-    if (!formData.expiryDate.match(/^\d{2}\/\d{2}$/)) newErrors.expiryDate = 'Use MM/YY format';
+    
+    // Validate expiry date format
+    if (!formData.expiryDate) {
+      newErrors.expiryDate = 'Expiry date is required';
+    } else if (!formData.expiryDate.match(/^\d{2}\/\d{2}$/)) {
+      newErrors.expiryDate = 'Use MM/YY format';
+    } else {
+      // Validate expiry date is not in the past
+      const [month, year] = formData.expiryDate.split('/');
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear() % 100;
+      const currentMonth = currentDate.getMonth() + 1;
+      
+      const expiryYear = parseInt(year);
+      const expiryMonth = parseInt(month);
+      
+      if (expiryYear < currentYear || (expiryYear === currentYear && expiryMonth < currentMonth)) {
+        newErrors.expiryDate = 'Card has expired';
+      }
+    }
+    
     if (!formData.cvv.match(/^\d{3,4}$/)) newErrors.cvv = 'Valid CVV is required';
-    if (!formData.agreeToTerms) newErrors.agreeToTerms = 'You must agree to terms';
+    if (!formData.agreeToTerms) newErrors.agreeToTerms = 'You must agree to terms and conditions';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;

@@ -31,41 +31,59 @@ export default function Booking() {
     }));
   };
 
+  const validateBookingForm = () => {
+    const errors = [];
+    
+    if (!formData.name.trim()) errors.push('Name is required');
+    if (!formData.email.trim()) errors.push('Email is required');
+    if (!formData.phone.trim()) errors.push('Phone number is required');
+    if (!formData.selectTrainer) errors.push('Please select a trainer');
+    if (!formData.selectedDate) errors.push('Preferred date is required');
+    if (!formData.selectedTime) errors.push('Preferred time is required');
+    if (!formData.fitnessGoal) errors.push('Fitness goal is required');
+    
+    return errors;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    const validationErrors = validateBookingForm();
+    if (validationErrors.length > 0) {
+      setBookingStatus({
+        type: 'error',
+        message: `Please fix the following: ${validationErrors.join(', ')}`
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     // Simulate API call
     setTimeout(() => {
-      // Check if all required fields are filled
-      if (formData.name && formData.email && formData.phone && formData.selectTrainer && 
-          formData.selectedDate && formData.selectedTime && formData.fitnessGoal) {
-        setBookingStatus({
-          type: 'success',
-          message: 'Booking request submitted successfully!'
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          selectTrainer: '',
-          selectedDate: '',
-          selectedTime: '',
-          sessionType: '60',
-          fitnessGoal: '',
-          experience: 'beginner',
-          notes: ''
-        });
-      } else {
-        setBookingStatus({
-          type: 'error',
-          message: 'Please fill in all required fields.'
-        });
-      }
-      setIsSubmitting(false);
+      setBookingStatus({
+        type: 'success',
+        message: 'Booking request submitted successfully!'
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        selectTrainer: '',
+        selectedDate: '',
+        selectedTime: '',
+        sessionType: '60',
+        fitnessGoal: '',
+        experience: 'beginner',
+        notes: ''
+      });
+      
+      // Auto clear success message after 5 seconds
+      setTimeout(() => setBookingStatus(null), 5000);
     }, 1500);
+    setIsSubmitting(false);
   };
 
   const containerVariants = {
@@ -203,6 +221,7 @@ export default function Booking() {
                       name="selectedDate"
                       value={formData.selectedDate}
                       onChange={handleChange}
+                      min={new Date().toISOString().split('T')[0]}
                       required
                     />
                   </div>
