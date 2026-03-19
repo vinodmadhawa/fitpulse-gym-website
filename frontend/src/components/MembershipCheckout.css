@@ -66,6 +66,29 @@
   margin-bottom: 1.5rem;
 }
 
+/* Responsive breakpoint for large tablets */
+@media (max-width: 1024px) {
+  .checkout-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .checkout-content {
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .order-summary {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+}
+
 fieldset {
   border: none;
   padding: 1.5rem 0;
@@ -279,6 +302,192 @@ input.error {
   font-size: 2rem;
   color: #D4A017;
   margin-bottom: 0.5rem;
+}
+
+/* Mobile responsive breakpoint */
+@media (max-width: 480px) {
+  .checkout {
+    padding: 1.5rem 0;
+  }
+
+  .back-btn {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .checkout-header {
+    margin-bottom: 2rem;
+  }
+
+  .checkout-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .checkout-header p {
+    font-size: 0.95rem;
+  }
+
+  .checkout-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .checkout-form {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .order-summary {
+    position: static;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.25rem;
+    border: 1px solid rgba(212, 160, 23, 0.2);
+    border-radius: 8px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .progress-steps {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-indicator {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .step-label {
+    font-size: 0.8rem;
+    display: none;
+  }
+
+  .step-divider {
+    width: 20px;
+    margin: 0 0.25rem;
+  }
+
+  .card-input-wrapper {
+    position: relative;
+  }
+
+  .card-type-badge {
+    right: 0.75rem;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  legend {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .agreements {
+    padding: 1rem;
+  }
+
+  .review-sections {
+    padding: 1rem;
+  }
+
+  .review-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .review-item {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .summary-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .summary-pricing {
+    gap: 0.5rem;
+  }
+
+  .price-item {
+    font-size: 0.85rem;
+  }
+
+  .price-total {
+    font-size: 1.1rem;
+  }
+
+  .success-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+    margin: 0 auto 1rem;
+  }
+
+  .success-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .success-container p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .confirmation-details {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .detail-item {
+    padding: 0.5rem 0;
+  }
+
+  .success-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .success-actions button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .error-message {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 .checkout-error p {

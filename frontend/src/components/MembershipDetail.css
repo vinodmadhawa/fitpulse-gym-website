@@ -295,6 +295,408 @@ table td {
   color: #d0d0d0;
 }
 
+/* Tablet responsive breakpoint */
+@media (max-width: 1024px) {
+  .membership-detail-container {
+    padding: 0 1.5rem;
+  }
+
+  .back-button {
+    padding: 0 1.5rem;
+  }
+
+  .membership-detail-hero {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .membership-detail-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .membership-detail-hero .subtitle {
+    font-size: 1.15rem;
+  }
+
+  .membership-detail-hero .description {
+    font-size: 1rem;
+  }
+
+  .membership-content {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .membership-right {
+    gap: 1.5rem;
+  }
+
+  .membership-section {
+    padding: 1.5rem;
+  }
+
+  .membership-comparison {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .membership-comparison h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small tablet / landscape phone */
+@media (max-width: 768px) {
+  .membership-detail-page {
+    padding: 1.5rem 0;
+  }
+
+  .membership-detail-header {
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .back-button {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .membership-detail-container {
+    padding: 0 1rem;
+  }
+
+  .membership-detail-hero {
+    padding: 2rem 1.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .membership-detail-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .membership-detail-hero .subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .membership-detail-hero .description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+  }
+
+  .price-display {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .price-display .currency {
+    font-size: 1.3rem;
+  }
+
+  .membership-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .membership-left {
+    gap: 1.5rem;
+  }
+
+  .membership-right {
+    gap: 1.5rem;
+  }
+
+  .membership-section {
+    padding: 1.25rem;
+  }
+
+  .membership-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .highlights-list,
+  .features-list {
+    gap: 0.75rem;
+  }
+
+  .highlights-list li,
+  .features-list li {
+    gap: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .signup-card,
+  .benefits-card,
+  .faq-link-card {
+    padding: 1.25rem;
+  }
+
+  .signup-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-signup {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .terms {
+    font-size: 0.8rem;
+  }
+
+  .benefits-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-item {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .benefit-item strong {
+    margin-bottom: 0.2rem;
+  }
+
+  .benefit-item p {
+    font-size: 0.85rem;
+  }
+
+  .faq-link-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .btn-faq {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .membership-comparison {
+    padding: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .membership-comparison h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .comparison-table {
+    overflow-x: auto;
+  }
+
+  table th {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .membership-detail-page {
+    padding: 1rem 0;
+  }
+
+  .membership-detail-header {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .back-button {
+    font-size: 0.85rem;
+    gap: 0.4rem;
+    padding: 0 0.75rem;
+  }
+
+  .membership-detail-container {
+    padding: 0 0.75rem;
+  }
+
+  .membership-detail-hero {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+    border-width: 1px;
+  }
+
+  .membership-detail-hero h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .membership-detail-hero .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .membership-detail-hero .description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .price-display {
+    font-size: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .price-display .currency {
+    font-size: 1rem;
+  }
+
+  .price-display .period {
+    font-size: 0.85rem;
+  }
+
+  .membership-content {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .membership-left {
+    gap: 1rem;
+  }
+
+  .membership-right {
+    gap: 1rem;
+  }
+
+  .membership-section {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .membership-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlights-list,
+  .features-list {
+    gap: 0.5rem;
+  }
+
+  .highlights-list li,
+  .features-list li {
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .signup-card,
+  .benefits-card,
+  .faq-link-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .signup-card {
+    border-top-width: 3px;
+  }
+
+  .signup-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .btn-signup {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .terms {
+    font-size: 0.75rem;
+  }
+
+  .benefits-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .benefit-item {
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .benefit-item svg {
+    min-width: 16px;
+  }
+
+  .benefit-item strong {
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .benefit-item p {
+    font-size: 0.75rem;
+  }
+
+  .faq-link-card p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-faq {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .membership-comparison {
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .membership-comparison h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .comparison-table {
+    overflow-x: auto;
+  }
+
+  table th {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  table td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
 table tbody tr:hover {
   background: rgba(212, 160, 23, 0.05);
 }
