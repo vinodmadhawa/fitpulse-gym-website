@@ -195,8 +195,8 @@ export default function ServiceDetail() {
               <button className="btn-primary" onClick={() => navigate('/booking')}>
                 Book Now
               </button>
-              <button className="btn-secondary" onClick={() => navigate('/faq')}>
-                Get More Info
+              <button className="btn-secondary" onClick={() => navigate('/#contact')}>
+                Contact Us
               </button>
             </motion.div>
           </motion.div>

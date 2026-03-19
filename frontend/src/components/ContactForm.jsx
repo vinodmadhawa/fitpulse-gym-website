@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
@@ -6,6 +7,7 @@ import { submitContact } from '../services/api';
 import './ContactForm.css';
 
 export default function ContactForm() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -31,6 +33,12 @@ export default function ContactForm() {
         message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon!'
       });
       reset();
+      
+      // Navigate to contact section to show the success message
+      const contactSection = document.querySelector('#contact');
+      contactSection?.scrollIntoView({ behavior: 'smooth' });
+      
+      // Auto clear the success message after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
       setSubmitStatus({

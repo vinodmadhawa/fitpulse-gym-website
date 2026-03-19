@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import './Header.css';
 
 export default function Header({ darkMode, setDarkMode }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -29,8 +30,15 @@ export default function Header({ darkMode, setDarkMode }) {
 
   const handleNavClick = (href) => {
     setIsMenuOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    
+    // If we're on home page, just scroll to the section
+    if (location.pathname === '/') {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If on a detail page, navigate to home with the hash
+      navigate(`/${href}`);
+    }
   };
 
   return (

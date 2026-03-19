@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, User, MessageSquare } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, Calendar, Clock, User, MessageSquare, CheckCircle, AlertCircle, X } from 'lucide-react';
 import { trainersData } from '../data/trainersData';
 import './Booking.css';
 
@@ -20,6 +20,9 @@ export default function Booking() {
     notes: ''
   });
 
+  const [bookingStatus, setBookingStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -30,19 +33,39 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Booking request submitted! Our team will contact you shortly to confirm.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      selectTrainer: '',
-      selectedDate: '',
-      selectedTime: '',
-      sessionType: '60',
-      fitnessGoal: '',
-      experience: 'beginner',
-      notes: ''
-    });
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      // Check if all required fields are filled
+      if (formData.name && formData.email && formData.phone && formData.selectTrainer && 
+          formData.selectedDate && formData.selectedTime && formData.fitnessGoal) {
+        setBookingStatus({
+          type: 'success',
+          message: 'Booking request submitted successfully!'
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          selectTrainer: '',
+          selectedDate: '',
+          selectedTime: '',
+          sessionType: '60',
+          fitnessGoal: '',
+          experience: 'beginner',
+          notes: ''
+        });
+      } else {
+        setBookingStatus({
+          type: 'error',
+          message: 'Please fill in all required fields.'
+        });
+      }
+      setIsSubmitting(false);
+    }, 1500);
   };
 
   const containerVariants = {
@@ -319,9 +342,24 @@ export default function Booking() {
 
               {/* Submit Button */}
               <motion.div variants={itemVariants} className="form-actions">
-                <button type="submit" className="btn-submit">
-                  <MessageSquare size={18} />
-                  Request Booking
+                <button type="submit" disabled={isSubmitting} className="btn-submit">
+                  {isSubmitting ? (
+                    <>
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 1 }}
+                        style={{ display: 'inline-block' }}
+                      >
+                        <MessageSquare size={18} />
+                      </motion.div>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <MessageSquare size={18} />
+                      Request Booking
+                    </>
+                  )}
                 </button>
                 <p className="form-footer">We'll contact you within 24 hours to confirm your booking.</p>
               </motion.div>
@@ -379,6 +417,94 @@ export default function Booking() {
           </motion.div>
         </div>
       </div>
+
+      {/* Booking Status Modal */}
+      <AnimatePresence>
+        {bookingStatus && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="modal-overlay"
+            onClick={() => setBookingStatus(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className={`booking-modal ${bookingStatus.type}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                className="modal-close"
+                onClick={() => setBookingStatus(null)}
+              >
+                <X size={24} />
+              </button>
+
+              <div className="modal-content">
+                {bookingStatus.type === 'success' ? (
+                  <>
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.2, type: 'spring' }}
+                      className="modal-icon success"
+                    >
+                      <CheckCircle size={64} />
+                    </motion.div>
+                    <h2>Booking Confirmed!</h2>
+                    <p>{bookingStatus.message}</p>
+                    <p className="modal-subtitle">Our team will contact you within 24 hours to confirm your training session.</p>
+                  </>
+                ) : (
+                  <>
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.2, type: 'spring' }}
+                      className="modal-icon error"
+                    >
+                      <AlertCircle size={64} />
+                    </motion.div>
+                    <h2>Booking Failed</h2>
+                    <p>{bookingStatus.message}</p>
+                    <p className="modal-subtitle">Please check the form and try again.</p>
+                  </>
+                )}
+              </div>
+
+              <div className="modal-actions">
+                {bookingStatus.type === 'success' ? (
+                  <>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="btn btn-primary"
+                      onClick={() => {
+                        setBookingStatus(null);
+                        navigate('/');
+                      }}
+                    >
+                      Back to Home
+                    </motion.button>
+                  </>
+                ) : (
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn btn-secondary"
+                    onClick={() => setBookingStatus(null)}
+                  >
+                    Try Again
+                  </motion.button>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }

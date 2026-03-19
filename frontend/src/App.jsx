@@ -18,6 +18,27 @@ import MembershipConfirmation from './components/MembershipConfirmation';
 import './styles/global.css';
 
 function HomePage({ darkMode, setDarkMode }) {
+  useEffect(() => {
+    // Handle hash-based scrolling when navigating from detail pages
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
+    };
+
+    // Trigger on mount and when hash changes
+    handleHashScroll();
+    window.addEventListener('hashchange', handleHashScroll);
+
+    return () => window.removeEventListener('hashchange', handleHashScroll);
+  }, []);
+
   return (
     <>
       <Hero />
