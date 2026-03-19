@@ -13,30 +13,33 @@ export default function Membership() {
       name: 'Basic',
       price: '29',
       features: [
-        'Gym Access',
-        '1 Class/Week'
+        'Unlimited Gym Access',
+        'All Equipment Access',
+        'Locker & Shower Facilities'
       ],
       badge: null
     },
     {
       id: 2,
-      name: 'Standard',
-      price: '49',
+      name: 'Pro',
+      price: '59',
       features: [
-        'Full Access',
-        '5 Classes/Week',
-        'Personal Training'
+        'Unlimited Gym Access',
+        'Unlimited Group Classes',
+        '2 Personal Training Sessions',
+        'Nutrition Consultation'
       ],
       badge: 'Most Popular'
     },
     {
       id: 3,
       name: 'Premium',
-      price: '79',
+      price: '99',
       features: [
-        'All Access',
-        'Unlimited Classes',
-        '2x Personal Training'
+        'Unlimited Everything',
+        'Unlimited Personal Training',
+        'Bi-weekly Nutrition Coaching',
+        'Recovery Services'
       ],
       badge: null
     }

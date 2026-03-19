@@ -1,635 +1,350 @@
 .membership-detail-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-  padding: 40px 20px;
-  transition: all 0.3s ease;
-}
-
-.dark-mode .membership-detail-page {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2B2520 100%);
+  padding: 2rem 0;
 }
 
 .membership-detail-header {
-  max-width: 1200px;
-  margin: 0 auto 40px;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(212, 160, 23, 0.1);
+  margin-bottom: 3rem;
 }
 
 .back-button {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: #D4A017;
-  color: #2B2520;
+  gap: 0.75rem;
+  background: none;
   border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
+  color: #D4A017;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .back-button:hover {
-  background: #C49015;
   transform: translateX(-5px);
+  color: #e6b84d;
 }
 
 .membership-detail-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .membership-detail-hero {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid;
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
-  margin-bottom: 50px;
-  padding: 40px;
-  background: white;
-  border-radius: 15px;
-  border: 3px solid;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .membership-detail-hero {
-  background: #2B2520;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .membership-detail-hero h1 {
-  font-size: 44px;
-  font-weight: 800;
-  margin: 0 0 10px;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 .membership-detail-hero .subtitle {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 20px;
-  opacity: 0.8;
+  font-size: 1.3rem;
+  color: #aaa;
+  margin-bottom: 1rem;
 }
 
 .membership-detail-hero .description {
-  font-size: 16px;
-  color: #666;
-  margin: 0 0 30px;
-  line-height: 1.6;
-}
-
-.dark-mode .membership-detail-hero .description {
+  font-size: 1.1rem;
   color: #ccc;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .price-display {
-  font-size: 48px;
-  font-weight: 800;
-  margin-top: 20px;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 5px;
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .price-display .currency {
-  font-size: 28px;
+  font-size: 1.5rem;
+  vertical-align: super;
+}
+
+.price-display .amount {
+  font-weight: 700;
 }
 
 .price-display .period {
-  font-size: 18px;
-  opacity: 0.7;
+  font-size: 1rem;
+  color: #aaa;
 }
 
 .membership-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  margin-bottom: 60px;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .membership-left {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 2rem;
 }
 
 .membership-section {
-  background: white;
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 160, 23, 0.2);
   border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-}
-
-.dark-mode .membership-section {
-  background: #2B2520;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
 }
 
 .membership-section h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #2B2520;
-  margin: 0 0 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #D4A017;
-}
-
-.dark-mode .membership-section h3 {
+  font-size: 1.5rem;
   color: #D4A017;
+  margin-bottom: 1.5rem;
 }
 
 .highlights-list,
-.features-list,
-.not-included-list {
+.features-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .highlights-list li,
 .features-list li {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  color: #333;
-  padding: 10px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  gap: 1rem;
+  color: #d0d0d0;
+  font-size: 1rem;
 }
 
-.dark-mode .highlights-list li,
-.dark-mode .features-list li {
-  color: #e0e0e0;
-}
-
-.highlights-list li:hover,
-.features-list li:hover {
-  background: #f9f9f9;
-  transform: translateX(5px);
-}
-
-.dark-mode .highlights-list li:hover,
-.dark-mode .features-list li:hover {
-  background: #3a3a35;
-}
-
-.not-included-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #888;
-  padding: 8px 0;
-}
-
-.dark-mode .not-included-list li {
-  color: #999;
-}
-
-.not-included-list li span:first-child {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  background: #f0f0f0;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 12px;
-  color: #ccc;
-}
-
-.dark-mode .not-included-list li span:first-child {
-  background: #4a4a45;
+.highlights-list svg,
+.features-list svg {
+  flex-shrink: 0;
 }
 
 .membership-right {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .signup-card,
-.comparison-card,
 .benefits-card,
 .faq-link-card {
-  background: white;
-  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 160, 23, 0.2);
   border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.dark-mode .signup-card,
-.dark-mode .comparison-card,
-.dark-mode .benefits-card,
-.dark-mode .faq-link-card {
-  background: #2B2520;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-}
-
-.signup-card:hover,
-.comparison-card:hover,
-.benefits-card:hover,
-.faq-link-card:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
-}
-
-.signup-card h3,
-.comparison-card h3,
-.benefits-card h3,
-.faq-link-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #2B2520;
-  margin: 0 0 10px;
-}
-
-.dark-mode .signup-card h3,
-.dark-mode .comparison-card h3,
-.dark-mode .benefits-card h3,
-.dark-mode .faq-link-card h3 {
-  color: #D4A017;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
 }
 
 .signup-card {
   border-top: 4px solid;
 }
 
+.signup-card h3 {
+  color: #D4A017;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
 .card-subtitle {
-  font-size: 14px;
-  color: #666;
-  margin: 0 0 20px;
-}
-
-.dark-mode .card-subtitle {
   color: #aaa;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
 }
 
-.btn-signup,
-.btn-faq {
+.btn-signup {
   width: 100%;
-  padding: 15px 20px;
+  padding: 1rem;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
-  font-weight: 700;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: white;
+  margin-bottom: 1rem;
 }
 
 .btn-signup:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(212, 160, 23, 0.3);
-}
-
-.btn-faq {
-  background: #D4A017;
-  color: white;
-}
-
-.btn-faq:hover {
-  background: #C49015;
-  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212, 160, 23, 0.3);
 }
 
 .terms {
-  font-size: 12px;
-  color: #999;
-  margin-top: 10px;
+  color: #888;
+  font-size: 0.85rem;
   text-align: center;
-}
-
-.dark-mode .terms {
-  color: #777;
-}
-
-.divider {
-  height: 1px;
-  background: #e0e0e0;
-  margin: 15px 0;
-}
-
-.dark-mode .divider {
-  background: #4a4a45;
-}
-
-.upsell {
-  font-size: 13px;
-  color: #D4A017;
-  margin: 0 !important;
-  font-style: italic;
-  text-align: center;
-}
-
-.all-plans-features {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
-.all-plans-features li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #555;
-}
-
-.dark-mode .all-plans-features li {
-  color: #ccc;
+.benefits-card h3 {
+  color: #D4A017;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .benefit-item {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.dark-mode .benefit-item {
-  border-bottom-color: #4a4a45;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 160, 23, 0.1);
 }
 
 .benefit-item:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
   padding-bottom: 0;
+  border-bottom: none;
+}
+
+.benefit-item svg {
+  flex-shrink: 0;
 }
 
 .benefit-item strong {
+  color: #fff;
   display: block;
-  font-size: 14px;
-  color: #2B2520;
-}
-
-.dark-mode .benefit-item strong {
-  color: #D4A017;
+  margin-bottom: 0.25rem;
 }
 
 .benefit-item p {
-  font-size: 12px;
-  color: #888;
-  margin: 3px 0 0;
-}
-
-.dark-mode .benefit-item p {
   color: #aaa;
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .faq-link-card p {
-  font-size: 14px;
-  color: #666;
-  margin: 0 0 15px;
-  text-align: center;
-}
-
-.dark-mode .faq-link-card p {
   color: #aaa;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
-/* Comparison Table */
+.btn-faq {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(212, 160, 23, 0.2);
+  border: 1px solid #D4A017;
+  color: #D4A017;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-faq:hover {
+  background: rgba(212, 160, 23, 0.3);
+  transform: translateY(-2px);
+}
+
 .membership-comparison {
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 60px;
-}
-
-.dark-mode .membership-comparison {
-  background: #2B2520;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  margin-top: 3rem;
 }
 
 .membership-comparison h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #2B2520;
-  margin: 0 0 30px;
-  text-align: center;
-}
-
-.dark-mode .membership-comparison h2 {
   color: #D4A017;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .comparison-table {
   overflow-x: auto;
 }
 
-.comparison-table table {
+table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0;
 }
 
-.comparison-table thead {
-  background: #f9f9f9;
-  border-bottom: 2px solid #D4A017;
+table thead {
+  background: rgba(212, 160, 23, 0.1);
+  border-bottom: 2px solid rgba(212, 160, 23, 0.3);
 }
 
-.dark-mode .comparison-table thead {
-  background: #3a3a35;
-}
-
-.comparison-table th {
-  padding: 15px;
-  text-align: center;
-  font-weight: 700;
-  color: #2B2520;
-  font-size: 14px;
-}
-
-.dark-mode .comparison-table th {
-  color: #D4A017;
-}
-
-.comparison-table th span {
-  display: block;
-  color: #888;
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-.dark-mode .comparison-table th span {
-  color: #aaa;
-}
-
-.comparison-table td {
-  padding: 15px;
-  text-align: center;
-  border-bottom: 1px solid #e0e0e0;
-  color: #555;
-  font-size: 14px;
-}
-
-.dark-mode .comparison-table td {
-  border-bottom-color: #4a4a45;
-  color: #ccc;
-}
-
-.comparison-table td:first-child {
+table th {
+  padding: 1rem;
   text-align: left;
+  color: #D4A017;
   font-weight: 600;
-  color: #2B2520;
 }
 
-.dark-mode .comparison-table td:first-child {
-  color: #e0e0e0;
+table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(212, 160, 23, 0.1);
+  color: #d0d0d0;
 }
 
-.comparison-table tr:hover td {
-  background: #f9f9f9;
-}
-
-.dark-mode .comparison-table tr:hover td {
-  background: #3a3a35;
+table tbody tr:hover {
+  background: rgba(212, 160, 23, 0.05);
 }
 
 .membership-detail-error {
-  text-align: center;
-  padding: 60px 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 100px auto;
-}
-
-.dark-mode .membership-detail-error {
-  background: #2B2520;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2B2520 100%);
 }
 
 .membership-detail-error h2 {
-  color: #2B2520;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.dark-mode .membership-detail-error h2 {
   color: #D4A017;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.membership-detail-error button {
-  background: #D4A017;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.membership-detail-error button:hover {
-  background: #C49015;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .membership-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .membership-detail-hero {
-    padding: 30px;
-  }
-
-  .membership-detail-hero h1 {
-    font-size: 32px;
-  }
+.membership-detail-error p {
+  color: #aaa;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
-  .membership-detail-page {
-    padding: 20px 15px;
-  }
-
   .membership-detail-hero {
-    margin-bottom: 35px;
-    padding: 25px 15px;
+    padding: 2rem;
   }
 
   .membership-detail-hero h1 {
-    font-size: 26px;
+    font-size: 2rem;
   }
 
-  .membership-section {
-    padding: 20px;
+  .membership-content {
+    grid-template-columns: 1fr;
   }
 
-  .membership-comparison {
-    padding: 25px 15px;
-  }
-
-  .comparison-table table {
-    font-size: 12px;
-  }
-
-  .comparison-table th,
-  .comparison-table td {
-    padding: 10px 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .membership-detail-page {
-    padding: 15px 10px;
-  }
-
-  .back-button {
-    width: 100%;
-    justify-content: center;
-    font-size: 13px;
-  }
-
-  .membership-detail-hero {
-    margin-bottom: 25px;
-    padding: 20px;
-  }
-
-  .membership-detail-hero h1 {
-    font-size: 22px;
-  }
-
-  .price-display {
-    font-size: 36px;
-  }
-
-  .membership-section {
-    padding: 15px;
+  .membership-right {
+    order: -1;
   }
 
   .membership-comparison {
-    padding: 15px;
+    padding: 1rem;
   }
 
-  .comparison-table table {
-    font-size: 11px;
+  table {
+    font-size: 0.9rem;
   }
 
-  .comparison-table th,
-  .comparison-table td {
-    padding: 8px 5px;
-  }
-
-  .signup-card,
-  .comparison-card,
-  .benefits-card,
-  .faq-link-card {
-    padding: 15px;
+  table th,
+  table td {
+    padding: 0.75rem;
   }
 }

@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, Zap, Clock, Users as UsersIcon } from 'lucide-react';
+import { ArrowLeft, Check, Zap, Clock, Users } from 'lucide-react';
 import './MembershipDetail.css';
 
 export default function MembershipDetail() {
@@ -24,20 +24,11 @@ export default function MembershipDetail() {
         'WiFi access',
         'Free parking'
       ],
-      notIncluded: [
-        'Group classes',
-        'Personal training',
-        'Nutrition coaching',
-        'Childcare',
-        'Guest passes',
-        'Recovery services'
-      ],
       highlights: [
         'Most affordable option',
         'Full equipment access',
         'Flexible schedule'
-      ],
-      upsell: 'Upgrade to Pro to add group classes and personal training'
+      ]
     },
     pro: {
       name: 'Pro',
@@ -56,23 +47,15 @@ export default function MembershipDetail() {
         'Mobile app access',
         'WiFi access',
         'Free parking',
-        'Locker room & shower facilities',
         'Guest passes (2/month)',
         'Class booking priority'
-      ],
-      notIncluded: [
-        'Unlimited personal training',
-        'Childcare',
-        'Recovery services',
-        'Premium nutrition coaching'
       ],
       highlights: [
         '50% of members choose this plan',
         'Unlimited classes included',
         '2 PT sessions per month',
         'Best value'
-      ],
-      upsell: 'Upgrade to Premium for unlimited personal training'
+      ]
     },
     premium: {
       name: 'Premium',
@@ -92,59 +75,17 @@ export default function MembershipDetail() {
         'Mobile app access',
         'WiFi access',
         'Free parking',
-        'Locker room & shower facilities',
         'Guest passes (4/month)',
         'Priority class booking',
         'Priority trainer booking',
         'Recovery equipment access'
-      ],
-      notIncluded: [
-        'Childcare'
       ],
       highlights: [
         'Unlimited personal training',
         'Recovery services included',
         'Bi-weekly nutrition coaching',
         'Personalized plans'
-      ],
-      upsell: 'Add Elite for childcare and VIP amenities'
-    },
-    elite: {
-      name: 'Elite',
-      price: 149,
-      period: '/month',
-      subtitle: 'Ultimate fitness experience',
-      description: 'Our most comprehensive membership with every service, amenity, and perk to support your fitness journey.',
-      color: '#D4A017',
-      features: [
-        'Unlimited gym access (24/7)',
-        'Unlimited group classes',
-        'Unlimited personal training',
-        'Weekly fitness assessments & coaching',
-        'Personalized meal plans',
-        'Unlimited nutrition coaching',
-        'Recovery services (massage, sauna, ice bath)',
-        'Childcare (unlimited)',
-        'Guest privileges (unlimited)',
-        'Priority booking for all services',
-        'VIP lounge access',
-        'Exclusive member events',
-        'Mobile app access',
-        'Private locker',
-        'Towel service',
-        '10% discount on supplements',
-        'Expert lifestyle coaching',
-        'Recovery monitoring'
-      ],
-      notIncluded: [],
-      highlights: [
-        ' Premium 24/7 access',
-        'Full childcare included',
-        'VIP lounge & private locker',
-        'Unlimited everything',
-        'Personal concierge service'
-      ],
-      upsell: 'You have our most complete membership!'
+      ]
     }
   };
 
@@ -153,8 +94,18 @@ export default function MembershipDetail() {
   if (!selectedPlan) {
     return (
       <div className="membership-detail-error">
-        <h2>Membership plan not found</h2>
-        <button onClick={() => navigate('/')}>Back to Home</button>
+        <div className="container">
+          <h2>Plan Not Found</h2>
+          <p>The membership plan you're looking for doesn't exist.</p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn btn-primary"
+            onClick={() => navigate('/')}
+          >
+            Back to Home
+          </motion.button>
+        </div>
       </div>
     );
   }
@@ -251,21 +202,6 @@ export default function MembershipDetail() {
                 ))}
               </ul>
             </motion.div>
-
-            {/* Not Included */}
-            {selectedPlan.notIncluded.length > 0 && (
-              <motion.div variants={itemVariants} className="membership-section not-included">
-                <h3>Not Included</h3>
-                <ul className="not-included-list">
-                  {selectedPlan.notIncluded.map((item, idx) => (
-                    <li key={idx}>
-                      <span>✗</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            )}
           </motion.div>
 
           {/* Right Side - Signup & Info */}
@@ -284,27 +220,15 @@ export default function MembershipDetail() {
               <h3>Ready to get started?</h3>
               <p className="card-subtitle">Join today and start your fitness journey!</p>
 
-              <button className="btn-signup" style={{ backgroundColor: selectedPlan.color }}>
+              <button 
+                className="btn-signup" 
+                style={{ backgroundColor: selectedPlan.color }}
+                onClick={() => navigate(`/membership/${planName.toLowerCase()}/checkout`)}
+              >
                 Sign Up Now
               </button>
 
               <p className="terms">No credit card required. Cancel anytime.</p>
-
-              <div className="divider"></div>
-
-              <p className="upsell">{selectedPlan.upsell}</p>
-            </motion.div>
-
-            {/* Comparison */}
-            <motion.div variants={itemVariants} className="comparison-card">
-              <h3>All Plans Include</h3>
-              <ul className="all-plans-features">
-                <li><Check size={16} color="#D4A017" />Gym access</li>
-                <li><Check size={16} color="#D4A017" />Equipment</li>
-                <li><Check size={16} color="#D4A017" />Mobile app</li>
-                <li><Check size={16} color="#D4A017" />WiFi</li>
-                <li><Check size={16} color="#D4A017" />Free parking</li>
-              </ul>
             </motion.div>
 
             {/* Benefits */}
@@ -365,13 +289,11 @@ export default function MembershipDetail() {
                   <th>Basic<br /><span style={{ fontSize: '12px' }}>$29</span></th>
                   <th>Pro<br /><span style={{ fontSize: '12px' }}>$59</span></th>
                   <th>Premium<br /><span style={{ fontSize: '12px' }}>$99</span></th>
-                  <th>Elite<br /><span style={{ fontSize: '12px' }}>$149</span></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Gym Access</td>
-                  <td><Check size={18} color="#D4A017" /></td>
                   <td><Check size={18} color="#D4A017" /></td>
                   <td><Check size={18} color="#D4A017" /></td>
                   <td><Check size={18} color="#D4A017" /></td>
@@ -381,13 +303,11 @@ export default function MembershipDetail() {
                   <td>-</td>
                   <td><Check size={18} color="#D4A017" /></td>
                   <td><Check size={18} color="#D4A017" /></td>
-                  <td><Check size={18} color="#D4A017" /></td>
                 </tr>
                 <tr>
                   <td>Personal Training</td>
                   <td>-</td>
                   <td>2/month</td>
-                  <td>Unlimited</td>
                   <td>Unlimited</td>
                 </tr>
                 <tr>
@@ -395,25 +315,9 @@ export default function MembershipDetail() {
                   <td>-</td>
                   <td>1 session</td>
                   <td>Bi-weekly</td>
-                  <td>Unlimited</td>
                 </tr>
                 <tr>
                   <td>Recovery Services</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td><Check size={18} color="#D4A017" /></td>
-                  <td><Check size={18} color="#D4A017" /></td>
-                </tr>
-                <tr>
-                  <td>Childcare</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td><Check size={18} color="#D4A017" /></td>
-                </tr>
-                <tr>
-                  <td>VIP Lounge</td>
-                  <td>-</td>
                   <td>-</td>
                   <td>-</td>
                   <td><Check size={18} color="#D4A017" /></td>
