@@ -19,14 +19,19 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="hero-text"
         >
-          <div className="hero-logo-badge">
+          <motion.div 
+            className="hero-logo-badge"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <img 
               src="/assets/logo.png" 
-              alt="FitPulse Power" 
+              alt="FitPulse Sports Center Gym" 
               className="hero-logo-img"
               onError={(e) => e.target.style.display = 'none'}
             />
-          </div>
+          </motion.div>
           <h1>Reach Your Fitness Goals</h1>
           <p>Get in the best shape of your life with our expert trainers and a motivating environment to help you succeed.</p>
           

@@ -43,15 +43,24 @@
 .hero-logo-badge {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
   animation: float 3s ease-in-out infinite;
+  background: rgba(212, 160, 23, 0.1);
+  border: 2px solid rgba(212, 160, 23, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-logo-img {
-  height: 100px;
+  height: 180px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(212, 160, 23, 0.3));
+  filter: drop-shadow(0 8px 16px rgba(212, 160, 23, 0.4));
+  transition: transform 0.3s ease;
 }
 
 @keyframes float {
@@ -177,6 +186,16 @@
   .hero-image {
     height: 300px;
   }
+
+  .hero-logo-badge {
+    margin-bottom: 25px;
+    padding: 18px;
+    max-width: 280px;
+  }
+
+  .hero-logo-img {
+    height: 150px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -190,6 +209,16 @@
 
   .hero-image {
     height: 250px;
+  }
+
+  .hero-logo-badge {
+    margin-bottom: 20px;
+    padding: 15px;
+    max-width: 250px;
+  }
+
+  .hero-logo-img {
+    height: 120px;
   }
 }
 
